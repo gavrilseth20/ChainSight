@@ -73,7 +73,7 @@ ChainSight uses message-passing Graph Neural Networks to analyze transaction top
 
 ## 🚀 Live Demo
 
-> **Demo URL**: [https://chainsight.up.railway.app](https://chainsight.up.railway.app)
+> **Demo URL**: [https://chain-sight-mauve.vercel.app/](https://chain-sight-mauve.vercel.app/)
 
 ---
 
@@ -514,19 +514,22 @@ pytest tests/test_auth.py -v
 ## 📸 Screenshots
 
 ### Landing Page
-> Modern, responsive landing with animated particle background
+> Institutional-grade landing page with bold CHAINSIGHT hero, animated background, live stats (99.2% detection, 10M+ transactions), and direct CTAs to Analyze Transactions and Live Dashboard.
 
-### Dashboard
-> Real-time statistics, upload history, and quick actions
+### Dashboard — Chaining Vector Intelligence
+> Real-time pattern detection table showing Chain Vectoring, Rapid Movement, and Peeling Chain with true/false positive counts and accuracy scores. Paired with Institutional Flow panel displaying live BTC volume, secured endpoints, and compliance rating.
 
-### Graph Visualization
-> Interactive 2D/3D force-directed graph with path tracing
+### Dashboard — Intelligence Performance
+> Model performance metrics — 98.5% accuracy, 96.2% precision, 94.8% recall, 95.5% F1 — with ROC Curve Analysis (AUC: 0.985) and System Health panel showing core architecture, neural latency, and vector dataset stats.
 
-### Heatmap Analysis
-> Risk distribution, pattern matrix, and activity timeline
+### Graph Visualizer — Topology Viewport
+> Interactive 3D force-directed transaction network (NEURAL_DEPTH_3D mode) with color-coded nodes representing risk levels — red for critical, orange for high, green for clean — with zoom, fullscreen, and export controls.
 
-### SmurfBot
-> AI-powered chatbot for blockchain forensics Q&A
+### Heatmap — Neural Frequency Analysis
+> In-Degree vs Out-Degree Risk Heatmap identifying potential smurfing wallets. Color scale from low (green) to critical (red/orange), with timeline and risk distribution toggle views.
+
+### Analysis — Pattern Detection
+> Detected AML patterns displayed as cards — Structuring, Layering, Chain/Intermediary, and Smurfing — each showing confidence scores, operation volumes, risk level badges (Critical/High), and export log options.
 
 ---
 
@@ -549,6 +552,27 @@ pytest tests/test_auth.py -v
 | Layering | 156 | 6 | 94.2% |
 | Peeling Chain | 124 | 5 | 93.8% |
 | Rapid Movement | 89 | 11 | 89.5% |
+
+---
+
+## 🧪 Try It Yourself — Demo Data
+
+Want to test ChainSight instantly without any setup? We've included a sample transaction dataset so you can experience the full analysis pipeline end-to-end.
+
+### Steps
+
+1. **Open the live app**: [https://chainsight.up.railway.app](https://chainsight.up.railway.app)
+2. **Sign in** using Google OAuth
+3. **Download the demo dataset**: [`Demo_DS.csv`](./Demo_DS.csv)
+4. **Go to Upload** → drag and drop `Demo_DS.csv`
+5. **Click "Run Analysis"** and watch the GNN classify transactions in real time
+6. **Explore**:
+   - **Visualizer** → 3D transaction graph with flagged wallets
+   - **Analysis** → Smurfing, Layering, Structuring pattern cards
+   - **Heatmap** → In-degree vs out-degree risk distribution
+   - **Reports** → Generate and download a compliance PDF
+
+> The demo dataset contains a mix of licit and illicit transactions designed to trigger all four AML pattern detectors.
 
 ---
 
