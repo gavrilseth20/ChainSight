@@ -12,7 +12,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
 build/
 develop-eggs/
 dist/
@@ -29,40 +28,36 @@ wheels/
 .installed.cfg
 *.egg
 
-# Dataset (large files)
-Backend/dataset/
+# Dataset & ML artifacts
 *.csv
 *.pt
 *.pth
 *.pkl
 *.h5
 *.hdf5
-
-# ML artifacts
 *.model
 *.onnx
 wandb/
 mlruns/
-lightning_logs/
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
-*~
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Node (Frontend)
+# Node
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build outputs
+# Build
+dist/
 *.log
 *.tmp
 *.temp
@@ -75,8 +70,8 @@ yarn-error.log*
 # Coverage
 htmlcov/
 .coverage
-.coverage.*
 .pytest_cache/
 
-backend/uploads/
-dist/
+# Backend uploads
+Backend/uploads/
+uploads/
