@@ -73,15 +73,7 @@ ChainSight uses message-passing Graph Neural Networks to analyze transaction top
 
 ## 🚀 Live Demo
 
-> **Demo URL**: [https://ChainSight.ai](https://ChainSight.ai) *(Coming Soon)*
-
-### Test Credentials
-```
-Email: demo@ChainSight.ai
-Password: Demo123!
-```
-
-Or use **Google OAuth** for instant access.
+> **Demo URL**: [https://chainsight.up.railway.app](https://chainsight.up.railway.app)
 
 ---
 
@@ -168,7 +160,7 @@ Or use **Google OAuth** for instant access.
 |------------|---------|
 | **Supabase** | Backend-as-a-Service (BaaS) |
 | **Google Gemini** | AI chatbot API |
-| **GitHub Actions** | CI/CD pipeline |
+| **Railway** | Deployment & hosting |
 | **pytest** | Backend testing |
 
 ---
@@ -407,7 +399,7 @@ curl http://localhost:8000/api/v1/analysis/abc123/patterns \
   -H "Authorization: Bearer $TOKEN"
 ```
 
-📖 **Full API documentation**: See [Backend/API_ENDPOINTS.md](Backend/API_ENDPOINTS.md)
+📖 **Full API documentation**: See [API_ENDPOINTS.md](API_ENDPOINTS.md)
 
 ---
 
@@ -417,57 +409,72 @@ curl http://localhost:8000/api/v1/analysis/abc123/patterns \
 ChainSight/
 ├── 📂 AI/
 │   └── 📂 ML/
-│       ├── models.py              # GraphSAGE model definition & training
-│       ├── models_colab.py        # Google Colab training notebook
-│       └── smurf_hunter_model.pt  # Trained model weights
+│       ├── models.py                      # GraphSAGE model definition & training
+│       ├── models_colab.py                # Google Colab training notebook
+│       └── smurf_hunter_model.pt          # Trained model weights
 │
 ├── 📂 Backend/
-│   ├── main.py                    # FastAPI application entry
-│   ├── requirements.txt           # Python dependencies
+│   ├── main.py                            # FastAPI application entry
+│   ├── requirements.txt                   # Python dependencies
 │   ├── 📂 app/
-│   │   ├── config.py              # Environment configuration
-│   │   ├── dependencies.py        # Dependency injection
-│   │   ├── 📂 routers/            # API route handlers
-│   │   │   ├── auth.py            # Authentication endpoints
-│   │   │   ├── upload.py          # File upload handling
-│   │   │   ├── analysis.py        # ML analysis endpoints
-│   │   │   ├── graph.py           # Graph data endpoints
-│   │   │   ├── dashboard.py       # Dashboard stats
-│   │   │   ├── reports.py         # PDF report generation
-│   │   │   └── ws.py              # WebSocket handlers
-│   │   ├── 📂 services/           # Business logic
-│   │   │   ├── ml_service.py      # GNN inference & pattern detection
-│   │   │   ├── graph_service.py   # Graph construction
-│   │   │   └── analysis_service.py# Analysis orchestration
-│   │   ├── 📂 schemas/            # Pydantic models
-│   │   └── 📂 core/               # Security & Supabase client
-│   └── 📂 tests/                  # pytest test suite
+│   │   ├── config.py                      # Environment configuration
+│   │   ├── dependencies.py                # Dependency injection
+│   │   ├── 📂 routers/                    # API route handlers
+│   │   │   ├── auth.py                    # Authentication endpoints
+│   │   │   ├── upload.py                  # File upload handling
+│   │   │   ├── analysis.py                # ML analysis endpoints
+│   │   │   ├── graph.py                   # Graph data endpoints
+│   │   │   ├── dashboard.py               # Dashboard stats
+│   │   │   ├── reports.py                 # PDF report generation
+│   │   │   └── ws.py                      # WebSocket handlers
+│   │   ├── 📂 services/                   # Business logic
+│   │   │   ├── ml_service.py              # GNN inference & pattern detection
+│   │   │   ├── graph_service.py           # Graph construction
+│   │   │   └── analysis_service.py        # Analysis orchestration
+│   │   ├── 📂 schemas/                    # Pydantic models
+│   │   └── 📂 core/                       # Security & Supabase client
+│   └── 📂 tests/                          # pytest test suite
 │
-├── 📂 src/                        # React frontend
+├── 📂 src/                                # React frontend
 │   ├── 📂 components/
-│   │   ├── ChatBot.tsx            # Gemini AI assistant
-│   │   ├── DashboardLayout.tsx    # Authenticated layout
-│   │   ├── UltraGraphVisualization.tsx  # 2D/3D graph
-│   │   └── 📂 ui/                 # shadcn components
+│   │   ├── ChatBot.tsx                    # Gemini AI assistant
+│   │   ├── DashboardLayout.tsx            # Authenticated layout
+│   │   ├── UltraGraphVisualization.tsx    # 2D/3D graph
+│   │   └── 📂 ui/                         # shadcn components
 │   ├── 📂 pages/
-│   │   ├── Index.tsx              # Landing page
-│   │   ├── Dashboard.tsx          # Main dashboard
-│   │   ├── Upload.tsx             # File upload
-│   │   ├── Analysis.tsx           # Analysis results
-│   │   ├── Graph.tsx              # Network visualization
-│   │   ├── Heatmap.tsx            # Risk heatmaps
-│   │   ├── Patterns.tsx           # Pattern details
-│   │   ├── Reports.tsx            # Report generation
-│   │   └── Benchmarks.tsx         # Model performance
+│   │   ├── Index.tsx                      # Landing page
+│   │   ├── Dashboard.tsx                  # Main dashboard
+│   │   ├── Upload.tsx                     # File upload
+│   │   ├── Analysis.tsx                   # Analysis results
+│   │   ├── Graph.tsx                      # Network visualization
+│   │   ├── Heatmap.tsx                    # Risk heatmaps
+│   │   ├── Patterns.tsx                   # Pattern details
+│   │   ├── Reports.tsx                    # Report generation
+│   │   └── Benchmarks.tsx                 # Model performance
 │   ├── 📂 lib/
-│   │   └── api.ts                 # API client & types
-│   └── 📂 hooks/                  # Custom React hooks
+│   │   └── api.ts                         # API client & types
+│   ├── 📂 hooks/                          # Custom React hooks
+│   └── 📂 utils/
+│       └── useScrollAnimation.ts          # Scroll animation utility
 │
-├── 📂 public/                     # Static assets
-├── package.json                   # Frontend dependencies
-├── vite.config.ts                 # Vite configuration
-├── tailwind.config.ts             # Tailwind configuration
-└── README.md                      # This file
+├── 📂 uploads/
+│   └── 📂 reports/                        # Generated PDF reports
+│
+├── .env                                   # Environment variables
+├── .env.example                           # Environment template
+├── .gitignore
+├── API_ENDPOINTS.md                       # Full API reference
+├── components.json                        # shadcn config
+├── index.html
+├── package.json
+├── railway.toml                           # Railway deployment config
+├── requirements.txt                       # Root Python dependencies
+├── sample-graph-data.json
+├── tailwind.config.ts
+├── test_endpoints.py
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
 ```
 
 ---
@@ -547,47 +554,12 @@ pytest tests/test_auth.py -v
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+ChainSight is a collaborative project built by a team of four. Here's what each member contributed:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Development Guidelines
-
-- Follow TypeScript/Python type hints
-- Write tests for new features
-- Update documentation as needed
-- Use conventional commit messages
-
----
-
-## 👨‍💻 Author
-
-**Divyansh Bhatia**
-
-- LinkedIn: https://www.linkedin.com/in/divyansh-bhatia-88223b316/
-- GitHub: https://github.com/Bhatia06/
-
----
-
-## 🙏 Acknowledgments
-
-- [Elliptic Dataset](https://www.kaggle.com/datasets/ellipticco/elliptic-data-set) for Bitcoin AML data
-- [PyTorch Geometric](https://pytorch-geometric.readthedocs.io/) for GNN framework
-- [shadcn/ui](https://ui.shadcn.com/) for beautiful components
-- [Supabase](https://supabase.com/) for backend infrastructure
-
----
-
-<p align="center">
-  <strong>⭐ Star this repo if you found it helpful!</strong>
-</p>
-
-<p align="center">
-  Made with ❤️ for the blockchain security community
-</p>
-
+| Member | Contributions |
+|--------|--------------|
+| **Gavril Seth** | Full-stack architecture, FastAPI backend, Supabase integration, WebSocket real-time pipeline, deployment on Railway |
+| **Harini Sai** | React frontend development, UI/UX design, dashboard & visualization pages, TanStack Query integration |
+| **Amrita Hariharan** | GraphSAGE model research, training pipeline, Elliptic dataset preprocessing, performance benchmarking |
+| **Prathamesh Chincholkar** | Pattern detection algorithms, graph construction service, PDF report generation, backend testing |
 
